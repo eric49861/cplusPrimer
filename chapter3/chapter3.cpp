@@ -28,8 +28,18 @@ void practice_314();
  * 改写3.14，读入字符串
  */
 void practice_315();
+/**
+ * 练习3.17
+ * 读入字符串，存入vector，将每个字符串中的字符改写为大写然后输出
+ */
+void practice_317();
+/**
+ * 练习3.20
+ */
+void practice_320();
+
 int main(int argc, char **argv){
-	practice_314();
+	practice_320();
 	return 0;
 }
 
@@ -96,5 +106,34 @@ void practice_315()
 	string s;
 	while(cin >> s){
 		strs.push_back(s);
+	}
+}
+
+void practice_317()
+{
+	vector<string> strs;
+	string s;
+	while(cin >> s){
+		strs.push_back(s);
+	}
+	for(auto &str : strs){
+		for(auto &c : str){
+			c = toupper(c);
+		}
+	}
+	for(auto str : strs){
+		cout << str << endl;
+	}
+}
+
+void practice_320()
+{
+	vector<int> nums;
+	int num = 0;
+	while(cin >> num){
+		nums.push_back(num);
+	}
+	for(int i = 0, j = nums.size()-1; i <= j; i++, j--){
+		cout << "nums[" << i << "] + nums[" << j << "] = " << nums[i] + nums[j] << endl;
 	}
 }
